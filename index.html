@@ -1,14 +1,403 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="http://livejs.com/live.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
+</head>
+
 <style>
+    * {
+        box-sizing: border-box;
+    }
     body {
         background-color: black;
         color: #cccccc;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+
+    body::-webkit-scrollbar {
+        display: none;
+    }
+
+    .date {
+        display: inline-block;
+        font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+        font-size: x-small;
+        color: gray;
+    }
+
+    .left-content {
+        margin: 10em auto;
+    }
+
+    .left-content h1 {
+        font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+        font-size: xx-large;
+        width: 100%;
+        text-align: center;
+    }
+
+    .left-content p {
+        width: 100%;
+        font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+        font-size: small;
+        color: gray;
+        text-align: center;
+    }
+
+    .content h1 {
+        display: inline-block;
+        font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+        font-size: smaller;
+    }
+
+    .content p {
+        font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+        color: gray;
+        font-size: smaller;
+    }
+
+    .box {
+        margin: 5px;
+    }
+
+    .left {
+        flex-grow: 1;
+        display: flex;
+        flex-flow: row;
+        flex-wrap: wrap;
+        padding-left: 3em;
+        padding-right: 3em;
+    }
+
+    .right {
+        flex-grow: 1;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 3em;
+    }
+    .right::-webkit-scrollbar {
+        display: none;
+    }
+
+    .timeline {
+        position: relative;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    .timeline::after {
+        content: '';
+        position: absolute;
+        width: 1px;
+        background-color: gray;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        margin-left: -3px;
+    }
+
+    .container {
+        padding: 0;
+        position: relative;
+        background-color: inherit;
+        width: 50%;
+    }
+
+    /* Place the container to the left */
+    .rule-left {
+        left: 0;
+        text-align: right;
+    }
+
+    /* Place the container to the right */
+    .rule-right {
+        text-align: left;
+        left: 50%;
+    }
+
+    .content {
+        padding: 20px 30px;
+        background-color: black;
+        position: relative;
+        border-radius: 6px;
+    }
+
+    /* Media queries - Responsive timeline on screens less than 600px wide */
+    @media screen and (max-width: 600px) {
+        /* Place the timeline to the left */
+        .timeline::after {
+            left: 31px;
+        }
+
+        .left-content {
+            margin: 2em auto;
+        }
+
+        /* Full-width containers */
+        .container {
+            width: 100%;
+            padding-left: 70px;
+            padding-right: 25px;
+        }
+
+        /* Make all right containers behave like the left ones */
+        .rule-right {
+            left: 0%;
+        }
+
+        .rule-left {
+            text-align: left;
+        }
     }
 </style>
 
-
-
-
-
 <body>
-    <h1> Dot 2 Dot Project Timeline </h1>
+    <div class="box left">
+        <div class="left-content">
+            <h1> Dot 2 Dot Project Timeline </h1>
+            <p>A simple page to show the current state of the Dot To Dot Studio Project</p>
+        </div>
+    </div>
+    <div class="box right">
+        <div class="timeline">
+            <div class="container rule-left">
+                <div class="content">
+                    <span class="date">29th of July</span>
+                    <h1>Created This Page</h1>
+                    <p>
+                        Created this timeline to better show the current state of the project.
+                    </p>
+                </div>
+            </div>
+            <div class="container rule-right">
+                <div class="content">
+                    <span class="date">29th of July</span>
+                    <h1>Successful Testing!</h1>
+                    <p>
+                        Succeeded in monitoring and syncing changes in stock across WooCommerce and Square consistently without errors.
+                    </p>
+                </div>
+            </div>
+            <div class="container rule-left">
+                <div class="content">
+                    <span class="date">29th of July</span>
+                    <h1>Fixed assorted bugs in Consistency Checks, Product Storage, Platform ID caching.</h1>
+                    <p>
+                        Implemented lower priority fixes.
+                    </p>
+                </div>
+            </div>
+            <div class="container rule-right">
+                <div class="content">
+                    <span class="date">28th of July</span>
+                    <h1>Fixed float vs decimal bug</h1>
+                    <p>
+                        Eliminated rounding and arithmetic errors in stock calculation.
+                    </p>
+                </div>
+            </div>
+            <div class="container rule-left">
+                <div class="content">
+                    <span class="date">28th of July</span>
+                    <h1>Started Tracking What Platforms Products Exist On.</h1>
+                    <p>
+                        To prevent errors where a product isn't found on a platform when trying to modify its stock.
+                    </p>
+                </div>
+            </div>
+            <div class="container rule-right">
+                <div class="content">
+                    <span class="date">28th of July</span>
+                    <h1>Started Refactoring Code to Repair Bug</h1>
+                    <p>
+                        Started going through all existing code to trace occurrences of
+                        this bug, and repairing them.
+                    </p>
+                </div>
+            </div>
+            <div class="container rule-left">
+                <div class="content">
+                    <span class="date">27th of July</span>
+                    <h1>Discovered a crippling bug affecting all existing code.</h1>
+                    <p>
+                        A confusion between usage of float and decimal numbers led to rounding errors in stock calculations.
+                        This was discovered during an attempt to apply the existing software to the entire WooCommerce stores dataset.
+
+                        There was no damage to the current WooCommerce store in any way.
+                    </p>
+                </div>
+            </div>
+            <div class="container rule-right">
+                <div class="content">
+                    <span class="date">July</span>
+                    <h1>Added Project Source Code to GitHub</h1>
+                    <p>In the interest of more detailed tracking of changes, and ensuring the code was backed up, I added the project to Git Version Control.</p>
+                </div>
+            </div>
+            <div class="container rule-left">
+                <div class="content">
+                    <span class="date">July</span>
+                    <h1>Finished Consistency Checks Version Two</h1>
+                    <p>
+                        Replaced flawed Version One system with more robust and stable version two.
+                    </p>
+                </div>
+            </div>
+            <div class="container rule-right">
+                <div class="content">
+                    <span class="date">July</span>
+                    <h1>Testing, Restructuring, and Project Maintenance</h1>
+                    <p>Formatted code to PEP8 Standards, made some minor adjustments to databasing and class structure. Modified product platform loader to bring it in line with current expectations.</p>
+                </div>
+            </div>
+            <div class="container rule-left">
+                <div class="content">
+                    <span class="date">July</span>
+                    <h1>Began Work on Consistency Checks Version Two & Reorganised Thread Structure</h1>
+                    <p>
+                        While multi-threaded for efficiency, this no longer worked effectively after
+                        discovering some constraints introduced by Woo Commerce. This resulted in errors
+                        where inconsistent stock would be found before stock changes had been applied.
+                    </p>
+                </div>
+            </div>
+            <div class="container rule-right">
+                <div class="content">
+                    <span class="date">July</span>
+                    <h1>Bug Fixing</h1>
+                    <p>Fixed assorted bugs in various algorithms concerning transaction handling, stock calculations.</p>
+                </div>
+            </div>
+            <div class="container rule-left">
+                <div class="content">
+                    <span class="date">A while ago...</span>
+                    <h1>First Working Sync of a Stock Value Across Platforms</h1>
+                    <p>
+                        In perfect conditions, stock was able to be synced over multiple platforms.
+                        This quickly fell apart however due to some bugs in my algorithms.
+                    </p>
+                </div>
+            </div>
+            <div class="container rule-right">
+                <div class="content">
+                    <span class="date">A while ago...</span>
+                    <h1>Finished Workable WooCommerceAPI Class</h1>
+                    <p>Finished a WooCommerceAPI class that was functional and usable, although lacking </p>
+                </div>
+            </div>
+            <div class="container rule-left">
+                <div class="content">
+                    <span class="date">A while ago...</span>
+                    <h1>Finished Version One of Consistency Checks</h1>
+                    <p>
+                        Initial Consistency Check algorithms finalized.
+                    </p>
+                </div>
+            </div>
+            <div class="container rule-right">
+                <div class="content">
+                    <span class="date">A while ago...</span>
+                    <h1>Modified All Platform APIs for Consistency Checks</h1>
+                    <p>
+                        Added methods to index all the stock values for every product on every platform.
+                        This involved going back and making extensive modifications to internal aspects of every system
+                        I had written thus far.
+                    </p>
+                </div>
+            </div>
+            <div class="container rule-left">
+                <div class="content">
+                    <span class="date">A while ago...</span>
+                    <h1>Started to implement consistency checking</h1>
+                    <p>Working on the WooCommerceAPI and discovering various limitations of WooCommerce that did not exist on Square incentivized me to create code to periodically check each platform and ensure that stock is consistent.</p>
+                </div>
+            </div>
+            <div class="container rule-right">
+                <div class="content">
+                    <span class="date">A while ago...</span>
+                    <h1>Started WooCommerceAPI</h1>
+                    <p>Started writing basic methods for WooCommerce API, ability to set and modify stock, apply generalised changes etc.</p>
+                </div>
+            </div>
+            <div class="container rule-left">
+                <div class="content">
+                    <span class="date">A while ago...</span>
+                    <h1>Finished SquareAPI</h1>
+                    <p>After various tweaks to stock management logic, I finished a workable SquareAPI class.</p>
+                </div>
+            </div>
+            <div class="container rule-right">
+                <div class="content">
+                    <span class="date">A while ago...</span>
+                    <h1>Considerable Refactoring</h1>
+                    <p>Writing the SquareAPI revealed some core issues with my stock synchronisation logic. I went back and started to fix these issues.</p>
+                </div>
+            </div>
+            <div class="container rule-left">
+                <div class="content">
+                    <span class="date">A while ago...</span>
+                    <h1>Started Writing SquareAPI</h1>
+                    <p>Began work on the Square API, creating methods for fetching stock changes, and applying changes.</p>
+                </div>
+            </div>
+            <div class="container rule-right">
+                <div class="content">
+                    <span class="date">A while ago...</span>
+                    <h1>Wrote SystemAPI</h1>
+                    <p>The API that allows the stock manager to interact with databased products in the same way it will talk to other platforms.</p>
+                </div>
+            </div>
+            <div class="container rule-left">
+                <div class="content">
+                    <span class="date">A while ago...</span>
+                    <h1>Refactoring Database Models</h1>
+                    <p>Reorganized the database, changed the schema to reflect some on-the-fly changes in system structure.</p>
+                </div>
+            </div>
+            <div class="container rule-right">
+                <div class="content">
+                    <span class="date">A while ago...</span>
+                    <h1>Wrote Generic Stock Change Handlers</h1>
+                    <p>Logic to take generic formatted stock changes, process them and spawn transactions.</p>
+                </div>
+            </div>
+            <div class="container rule-left">
+                <div class="content">
+                    <span class="date">A while ago...</span>
+                    <h1>Created Stock Manager Boilerplate</h1>
+                    <p>Wrote a basic class with no stock sync logic implemented yet, setup platform API loader.</p>
+                </div>
+            </div>
+            <div class="container rule-right">
+                <div class="content">
+                    <span class="date">A while ago...</span>
+                    <h1>Wrote ProductDB service</h1>
+                    <p>A <i>currently</i> almost empty service that simply functions to load the Stock Manager</p>
+                </div>
+            </div>
+            <div class="container rule-left">
+                <div class="content">
+                    <span class="date">A while ago...</span>
+                    <h1>Fixed some bugs on the platform</h1>
+                    <p>Repaired some underlying flaws with the Lazy Platform, and the service boilerplate.</p>
+                </div>
+            </div>
+            <div class="container rule-right">
+                <div class="content">
+                    <span class="date">A while ago...</span>
+                    <h1>Built and Finished Dot2DotPanel Backend</h1>
+                    <p>The code that will provide the panel site with information</p>
+                </div>
+            </div>
+            <div class="container rule-left">
+                <div class="content">
+                    <span class="date">A while ago...</span>
+                    <h1>Built Lazy Service Boilerplate</h1>
+                    <p>The rest of the software will operate on top of this boilerplate.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
