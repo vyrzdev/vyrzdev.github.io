@@ -1,0 +1,192 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    background-color: black;
+    color: #cccccc;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.date {
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    font-size: x-small;
+    color: gray;
+}
+
+.left-content {
+    margin: 10em auto;
+    padding: 1em 10vw;
+}
+
+.index-content {
+    margin: 3em 2em 2em;
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    font-size: large;
+}
+.index-content h1 {
+    font-style: italic;
+}
+.index-content a {
+    color: #cccccc;
+    font-size: small;
+    margin-right: 1em;
+}
+
+.index-content a:visited {
+    color: #cccccc;
+    text-decoration: none;
+}
+
+.index-content a:hover {
+    color: #ffffff;
+}
+
+
+
+.index-content p {
+    font-weight: lighter;
+    color: grey;
+    font-size: small;
+}
+
+.index-content .buttons {
+    margin-bottom: 3em;
+}
+.index-content .tech-list {
+    border-left: white 1px solid;
+    padding-left: 1em;
+    margin-bottom: 2em;
+}
+.index-content .tech-list p {
+    font-size: small;
+    color: white;
+}
+
+.left-content h1 {
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    font-size: xx-large;
+    width: 100%;
+    text-align: center;
+}
+
+.left-content p {
+    width: 100%;
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    font-size: small;
+    color: gray;
+    text-align: center;
+}
+
+.content h1 {
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    font-size: smaller;
+}
+
+.content p {
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    color: gray;
+    font-size: smaller;
+}
+
+.box {
+    margin: 5px;
+}
+
+.left {
+    flex-grow: 1;
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    padding-left: 3em;
+    padding-right: 3em;
+}
+
+.right {
+    flex-grow: 1;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 3em;
+}
+.right::-webkit-scrollbar {
+    display: none;
+}
+
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 1px;
+    background-color: gray;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+}
+
+.container {
+    padding: 0;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+}
+
+/* Place the container to the left */
+.rule-left {
+    left: 0;
+    text-align: right;
+}
+
+/* Place the container to the right */
+.rule-right {
+    text-align: left;
+    left: 50%;
+}
+
+.content {
+    padding: 20px 30px;
+    background-color: black;
+    position: relative;
+    border-radius: 6px;
+}
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+@media screen and (max-width: 600px) {
+    /* Place the timeline to the left */
+    .timeline::after {
+        left: 31px;
+    }
+
+    .left-content {
+        margin: 2em auto;
+    }
+
+    /* Full-width containers */
+    .container {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+
+    /* Make all right containers behave like the left ones */
+    .rule-right {
+        left: 0%;
+    }
+
+    .rule-left {
+        text-align: left;
+    }
+}
+
+.no-margin {
+    margin: 0!important;
+}

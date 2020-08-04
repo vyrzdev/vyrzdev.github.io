@@ -1,2 +1,2 @@
 # vyrzdev.github.io
-A github site for the project timeline
+A Github Pages site to serve as my personal portfolio
