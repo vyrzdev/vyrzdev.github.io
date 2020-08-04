@@ -50,7 +50,7 @@ body::-webkit-scrollbar {
 
 
 .index-content p {
-    font-weight: lighter;
+    font-weight: normal;
     color: grey;
     font-size: small;
 }
