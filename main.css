@@ -161,6 +161,9 @@ body::-webkit-scrollbar {
 
 /* Media queries - Responsive timeline on screens less than 600px wide */
 @media screen and (max-width: 600px) {
+    .index-content h1 {
+        font-size: xx-large;
+    }
     /* Place the timeline to the left */
     .timeline::after {
         left: 31px;
